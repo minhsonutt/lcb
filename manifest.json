@@ -1,0 +1,64 @@
+{
+	"name": "Leecombank Automation",
+	"version": "3.1.4",
+	"manifest_version": 2,
+	"description": "Get token số lượng lớn, tự động nuôi nick số lượng lớn, hỗ trợ checkpoint ảnh bạn bè!",
+	"homepage_url": "https://leecombank.net/",
+	"icons": {
+		"16": "icons/icon.png",
+		"48": "icons/icon.png",
+		"128": "icons/icon.png"
+	},
+	"background": {
+		"scripts": [
+			"theme/js/jquery.min.js",
+			"js/background.js"
+		]
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "icons/icon.png",
+			"38": "icons/icon.png"
+		},
+		"default_title": "Leecombank Automation",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"js": [
+			"theme/js/jquery.min.js",
+			"js/farm.js",
+			"js/get_token.js",
+			"theme/js/axios.js",
+			"theme/js/jquery.md5.min.js"
+		],
+		"css": ["theme/css/content.css"],
+		"matches": ["http://*/*", "https://*/*"],
+		"run_at": "document_start"
+	}],
+	"web_accessible_resources": [
+		"http://*/*",
+		"https://*/*",
+		"background.js"
+	],
+	"permissions": [
+		"clipboardRead",
+		"clipboardWrite",
+		"cookies",
+		"browsingData",
+		"notifications",
+		"contextMenus",
+		"tabs",
+		"activeTab",
+		"storage",
+		"unlimitedStorage",
+		"proxy",
+		"webNavigation",
+		"downloads",
+		"webRequest",
+		"webRequestBlocking",
+		"management",
+		"http://*/*",
+		"https://*/*"
+	]
+}

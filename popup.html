@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="theme/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="theme/css/popup.css">
+		<script type="text/javascript" src="theme/js/jquery.min.js"></script>
+		
+	</head>
+	<body>
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<a id="domain_name" target="_blank" href="https://leecombank.net">Leecombank.net</a> <span class="pull-right" id="version"></span>
+			</div>
+			<div class="panel-body">
+				<div class="tab-slider--nav">
+					<ul class="tab-slider--tabs">
+						<li class="tab-slider--trigger active" rel="tab_free">Tool thường dùng</li>
+						<li class="tab-slider--trigger" rel="tab_not_free">Tool chạy SLL</li>
+					</ul>
+				</div>
+				<div class="tab-slider--container">
+					<!-- Miễn phí -->
+					<div id="tab_free" class="tab-slider--body">
+						<div class="waiting">
+							<center>
+								<img src="https://leecombank.net/public/svg/loading.svg">
+								<p>Đang tải dữ liệu từ Server</p>
+							</center>
+						</div>
+						<!-- Tab -->
+						<div id="main" style="display: none">
+							
+							<div class="clearfix"></div>
+							<div class="alert alert-warning fade in alert-dismissible mt10 mb0 _alert" style="display: none"></div>
+							<div class="clearfix"></div>
+							<h2>Nuôi nick facebook</h2>
+							<button type="button" class="mt10 btn btn-danger btn-block" id="auto_farm" disabled="">Bạn chưa đăng nhập Leecombank</button>
+
+							<div class="clearfix"></div>
+							<h2>Đăng nhập vào facebook</h2>
+
+							<input class="tab" id="tab1" type="radio" name="tabs" checked>
+							<label class="tab" for="tab1">Cookie</label>
+							<input class="tab" id="tab2" type="radio" name="tabs">
+							<label class="tab" for="tab2">Token</label>
+							<input class="tab" id="tab3" type="radio" name="tabs">
+							<label class="tab" for="tab3">UID</label>
+							<section id="content1">
+								<input type="text" class="form-control mb10" id="_data_login" placeholder="Đăng nhập Facebook bằng Cookie">
+								<div class="message_login"></div>
+								<button type="button" class="btn btn-danger btn-block" id="_login"><i class="glyphicon glyphicon-off"></i>Đăng nhập</button>
+							</section>
+							<section id="content2">
+								<input type="text" class="form-control mb10" id="_data_login_token" placeholder="Đăng nhập Facebook bằng AccessToken">
+								<div class="message_login_token"></div>
+								<button type="button" class="btn btn-danger btn-block" id="_login_token"><i class="glyphicon glyphicon-off"></i>Đăng nhập</button>
+							</section>
+							<section id="content3">
+								<input type="text" class="form-control mb10" id="_data_login_uid" placeholder="Đăng nhập Facebook bằng UID">
+								<div class="message_login_uid"></div>
+								<button type="button" class="btn btn-danger btn-block" id="_login_uid"><i class="glyphicon glyphicon-off"></i>Đăng nhập</button>
+							</section>
+							
+							<!-- End tab -->
+							
+							<div class="clearfix"></div>
+							
+							<div class="row">
+								<div class="col-xs-6">
+									<h2>Thông tin LCB</h2>
+									<span id="info_lcb"></span>
+								</div>
+								<div class="col-xs-6">
+									<h2>Thông tin FB</h2>
+									<button type="button" class="btn btn-danger btn-block" id="upload_token" disabled="">Update Account</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Thu phí -->
+					<div id="tab_not_free" class="tab-slider--body">
+						<div class="clearfix"></div>
+						<h2>Nuôi nick số lượng lớn</h2>
+						<div class="message_farm_sll"></div>
+						<div class="row">
+							<div class="col-xs-8">
+								<textarea id="_data_uid" rows="2" class="form-control mb10" placeholder="Mỗi UID 1 dòng, uid phải có trong hệ thống"></textarea>
+							</div>
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-danger btn-block" id="auto_farm_sll"><i class="glyphicon glyphicon-play"></i>Bắt đầu</button>
+							</div>
+						</div>
+						
+						<div class="alert alert-success fade in alert-dismissible mt10 mb0">
+							Get Accesstoken SLL sẽ tắt Help Checkpoint:
+							<strong><span id="_status_help_checkpoint">ON</span></strong>
+						</div>
+
+
+						<div class="clearfix"></div>
+						<h2>Get AccessToken SLL</h2>
+						<div class="message_get_token_password"></div>
+						<div class="row">
+							<div class="col-xs-8">
+								<textarea id="_data_password" rows="2" class="form-control mb10" placeholder="Username|password, mỗi dòng 1 nick"></textarea>
+								<label class="option"><input type="checkbox" id="option_get_token">Chỉ get cookie</label>
+							</div>
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-danger btn-block" id="get_token_password"><i class="glyphicon glyphicon-play"></i>Bắt đầu</button>
+
+								<button type="button" style="display: none" class="btn btn-danger btn-block" id="next_get_token_password"><i class="glyphicon glyphicon-step-forward"></i>Bỏ qua</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/popup.js"></script>
+	<script type="text/javascript" src="theme/js/pop.js"></script>
+</html>
